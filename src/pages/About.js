@@ -1,8 +1,12 @@
 import React from 'react'
 
+import HeroSection from '../components/HeroSection'
+
 const About = () => {
   return (
-    <div>About</div>
+    <div>
+      <HeroSection heading="About" para="Let's know a little about me"/>
+    </div>
   )
 }
 

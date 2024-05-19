@@ -1,0 +1,27 @@
+.project-card{
+    background: #1a1919;
+    padding: 1.2rem;
+}
+
+.project-card img{
+    width: 100%;
+}
+
+.project-title{
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.project-details p{
+    padding-bottom: 1rem;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+@media screen and (max-width: 740px) {
+    .project-container{
+        max-width: 90%;
+        margin: auto;
+        grid-template-columns: 1fr;
+    }
+}
