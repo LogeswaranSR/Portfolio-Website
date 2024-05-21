@@ -13,7 +13,7 @@ const Home = () => {
         <h1>Welcome to my Portfolio</h1>
         <p>Hello There! and Welcome to my Portfolio Website.</p>
         <div>
-          <Link to='/about' className='btn'>Know About Me</Link>
+          <Link to='about' className='btn'>Know About Me</Link>
         </div>
       </div>
     </div>
