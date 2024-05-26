@@ -7,7 +7,28 @@
     flex-direction: column;
 }
 
+.game-header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.game-title h1{
+    font-size: 4rem;
+    color: #645b52;
+}
+
+.game-title{
+    text-align: center;
+    width: 100%;
+}
+
 .game-page{
+    background: #e9d6c5;
+    height: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -44,4 +65,53 @@
     border: 1px solid #846f5b;
     font-weight: 600;
     cursor: pointer;
+}
+
+.scorecard{
+    background: #846f5b;
+    margin: 0 10px;
+    border: 1px solid #846f5b;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.score-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.game-sub-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-welcome-text{
+    color: #ad9d8f;
+    width: 100%;
+}
+
+.game-welcome-text span{
+    color: #645b52;
+    font-weight: 800;
+}
+
+@media screen and (max-width: 750px) {
+    .game-title{
+        text-align: left;
+        width: 100%;
+    }
+
+    .game-page{
+        height: 100vh;
+    }
+
 }

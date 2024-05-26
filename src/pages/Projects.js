@@ -2,7 +2,7 @@ import "../assets/styles/Projects.css"
 import React from 'react'
 import ProjectCard from '../components/ProjectCard'
 import HeroSection from '../components/HeroSection'
-import ProjectData from "../components/ProjectData"
+import { ProjectData } from "../components/StaticData"
 
 const Projects = () => {
   return (

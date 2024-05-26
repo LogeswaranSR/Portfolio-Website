@@ -12,7 +12,7 @@ export const useEvent = (event, handler, passive=false) => {
     })
 };
 
-export function reset(setData, setGameOver) {
+export function reset(setData, setGameOver, setCurrScore) {
     let newGrid = [
         [0, 0, 0, 0],
         [0, 0, 0, 0],
@@ -24,6 +24,7 @@ export function reset(setData, setGameOver) {
     console.table(newGrid);
     setData(newGrid);
     setGameOver(false);
+    setCurrScore(0);
 }
 
 export function insertNumber(Grid){
@@ -56,8 +57,9 @@ export function insertNumber(Grid){
 
 }
 
-export function SwipeLeft(data, setData, checking=false){
+export function SwipeLeft(data, setData, currScore, setCurrScore, checking=false){
     let newGrid = cloneDeep(data);
+    let score = currScore
     for(let i = 0; i<4; i++){
         let row = newGrid[i];
         let slow = 0; 
@@ -77,6 +79,7 @@ export function SwipeLeft(data, setData, checking=false){
                     fast++;
                 } else if(row[slow] === row[fast]){
                     row[slow] = 2 * row[slow]
+                    score+=row[slow]
                     row[fast] = 0
                     slow++;
                     fast = slow + 1;
@@ -92,6 +95,7 @@ export function SwipeLeft(data, setData, checking=false){
         insertNumber(newGrid)
         if(!checking){
             setData(newGrid)
+            setCurrScore(score)
         } else {
             return true;
         }
@@ -100,8 +104,9 @@ export function SwipeLeft(data, setData, checking=false){
     return checking ? false : null;
 }
 
-export function SwipeRight(data, setData, checking=false){
+export function SwipeRight(data, setData, currScore, setCurrScore, checking=false){
     let newGrid = cloneDeep(data);
+    let score = currScore
     let row, slow, fast;
     for(let i = 0; i<4; i++){
         row = newGrid[i];
@@ -122,6 +127,7 @@ export function SwipeRight(data, setData, checking=false){
                     fast--;
                 } else if(row[slow] === row[fast]){
                     row[slow] = 2 * row[slow]
+                    score+=row[slow]
                     row[fast] = 0
                     slow--;
                     fast = slow - 1;
@@ -137,6 +143,7 @@ export function SwipeRight(data, setData, checking=false){
         insertNumber(newGrid)
         if(!checking){
             setData(newGrid)
+            setCurrScore(score)
         } else {
             return true;
         }
@@ -145,8 +152,9 @@ export function SwipeRight(data, setData, checking=false){
     return checking ? false : null;
 }
 
-export function SwipeUp(data, setData, checking=false){
+export function SwipeUp(data, setData, currScore, setCurrScore, checking=false){
     let newGrid = cloneDeep(data);
+    let score = currScore
     let slow, fast;
     for(let i = 0; i<4; i++){
         slow = 0; fast = 1;
@@ -165,6 +173,7 @@ export function SwipeUp(data, setData, checking=false){
                     fast++;
                 } else if(newGrid[slow][i] === newGrid[fast][i]){
                     newGrid[slow][i] = 2 * newGrid[slow][i]
+                    score+=newGrid[slow][i]
                     newGrid[fast][i] = 0
                     slow++;
                     fast = slow + 1;
@@ -180,6 +189,7 @@ export function SwipeUp(data, setData, checking=false){
         insertNumber(newGrid)
         if(!checking){
             setData(newGrid)
+            setCurrScore(score)
         } else {
             return true;
         }
@@ -188,8 +198,9 @@ export function SwipeUp(data, setData, checking=false){
     return checking ? false : null;
 }
 
-export function SwipeDown(data, setData, checking=false){
+export function SwipeDown(data, setData, currScore, setCurrScore, checking=false){
     let newGrid = cloneDeep(data);
+    let score = currScore
     let slow, fast;
     for(let i = 0; i<4; i++){
         slow = newGrid.length - 1; 
@@ -209,6 +220,7 @@ export function SwipeDown(data, setData, checking=false){
                     fast--;
                 } else if(newGrid[slow][i] === newGrid[fast][i]){
                     newGrid[slow][i] = 2 * newGrid[slow][i]
+                    score+=newGrid[slow][i]
                     newGrid[fast][i] = 0
                     slow--;
                     fast = slow - 1;
@@ -224,6 +236,7 @@ export function SwipeDown(data, setData, checking=false){
         insertNumber(newGrid)
         if(!checking){
             setData(newGrid)
+            setCurrScore(score)
         } else {
             return true;
         }
@@ -233,13 +246,13 @@ export function SwipeDown(data, setData, checking=false){
 }
 
 export function gameOver(data){
-    let checkLeft = SwipeLeft(data, null, true)
+    let checkLeft = SwipeLeft(data, null, 0, null, true)
     if(checkLeft) return false;
-    let checkRight = SwipeRight(data, null, true)
+    let checkRight = SwipeRight(data, null, 0, null, true)
     if(checkRight) return false;
-    let checkUp = SwipeUp(data, null, true)
+    let checkUp = SwipeUp(data, null, 0, null, true)
     if(checkUp) return false;
-    let checkDown = SwipeDown(data, null, true)
+    let checkDown = SwipeDown(data, null, 0, null, true)
     if(checkDown) return false;
     return true;
 }

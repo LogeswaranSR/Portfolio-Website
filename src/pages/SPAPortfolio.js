@@ -13,7 +13,7 @@ import Footer from "../components/Footer.js";
 const SPA = () => {
 
   return (
-    <>
+    <div className='portfolio'>
       <NavBar/>
       <Routes>
         <Route path="/" exact element={<Home/> } />
@@ -24,7 +24,7 @@ const SPA = () => {
         <Route path="experience" element={<Experience />}/>
       </Routes>
       <Footer/>
-    </>
+    </div>
   )
 }
 

@@ -1,13 +1,9 @@
-body {
-    background: black;
-}
-
-h1, h4, p, a{
+.portfolio h1, h2, h3, h4, p, a{
     color: #fff;
     text-decoration: none;
 }
 
-ul{
+.portfolio ul{
     list-style-type: none;
 }
 
