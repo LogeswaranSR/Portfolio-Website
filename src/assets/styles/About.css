@@ -1,3 +1,9 @@
+.about-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .about-content{
     display: flex;
     flex-direction: column;
@@ -63,12 +69,18 @@
     width: 85%;
 }
 
+.education{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
 .edu-title{
     margin: 20px 20px;
 }
 
 .edu-timeline{
-    width: 85%;
+    max-width: 1500px;
     margin-bottom: 25px;
 }
 
@@ -76,7 +88,31 @@
     color: #fff;
 }
 
-@media screen and (max-width: 800px) {
+.skills{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    position: relative;
+}
+
+.skill-row{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.skill-row h3{
+    text-align: left;
+    margin: 20px 10px;
+}
+
+.skill-container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin: 20px 10px;
+}
+
+@media screen and (max-width: 750px) {
     .about-intro{
         display: flex;
         align-items: center;
@@ -114,5 +150,31 @@
         font-size: 1.1rem;
         width: 100%;
         text-align: center;
+    }
+
+    .skills{
+        width: 95% ;
+        position: relative;
+    }
+
+    .skill-row{
+        margin: 20px 0;
+    }
+
+    .skill-container{
+        grid-template-columns: repeat(4, 170px);
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .skill-container{
+        grid-template-columns: repeat(3, 170px);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .skill-container{
+        grid-template-columns: repeat(2, 175px);
     }
 }

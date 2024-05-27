@@ -10,14 +10,18 @@ const Projects = () => {
       <HeroSection heading="Projects" para="Check some of my live projects!!"/>
       <div className='project-main-container'>
         <h1 className='project-heading'> Projects </h1>
-        <p className="project-summary"> Sample Text </p>
+        <p className="project-summary"> 
+          Explore my AI projects, including demos deployed with React and GitHub repositories. 
+          Check them out below and click to see a demo! 
+        </p>
         <div className="project-container">
           {ProjectData.map((data, ind) => { return(
             <ProjectCard 
             key={ind} 
             imgsrc={data.imgsrc}
             title={data.title}
-            description={data.description}/>
+            description={data.description}
+            link={data.linkToProject || null}/>
           )})}
         </div>
       </div>
