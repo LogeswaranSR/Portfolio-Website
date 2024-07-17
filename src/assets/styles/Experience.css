@@ -1,0 +1,100 @@
+.experience{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.experience-intro h1{
+    margin: 30px;
+}
+
+.experience-intro p{
+    padding: 2rem 10rem;
+    text-align: center;
+}
+
+.internship{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 30px;
+}
+
+.internship-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px 0;
+}
+
+.current-role{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+
+.current-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px 0;
+}
+
+.exp-card{
+    display: flex;
+    align-items: top;
+    background: #222;
+    border: 1px solid;
+    border-radius: 7px;
+    width: 90%;
+    margin-left: 20px;
+}
+
+.exp-card img{
+    width: 30vh;
+    height: 30vh;
+    object-fit: contain;
+    margin: 10px 10px;
+    border-radius: 7px;
+}
+
+.exp-card-content{
+    width: 100%;
+    text-align: left;
+    padding: 20px 10px;
+}
+
+.exp-card-content h2, h3, h4{
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 640px) {
+    .internship-container{
+        grid-template-columns: 1fr;
+    }
+
+    .current-container{
+        grid-template-columns: 1fr;
+    }
+
+    .exp-card{
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .exp-card img{
+        width: 20rem;
+        height: 20rem;
+        padding: 10px 10px;
+        margin: 0;
+    }
+}
