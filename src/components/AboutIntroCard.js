@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import AboutPhoto from "../assets/images/About Photo 1.jpg"
+import AboutPhoto from "../assets/images/About Photo 2.jpg"
 
 const AboutIntroCard = () => {
     const[visible, setVisible] = useState(false);
