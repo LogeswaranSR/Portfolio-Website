@@ -21,30 +21,20 @@
     text-align: center;
 }
 
-.internship{
+.internship, .current-role{
     display: flex;
     flex-direction: column;
     justify-content: left;
-    padding-left: 30px;
-}
-
-.internship-container{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 20px 0;
-}
-
-.current-role{
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    padding-left: 30px;
+    padding: 0 30px;
+    max-width: 100%;
     margin-bottom: 20px;
 }
 
-.current-container{
+.current-container, .internship-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+    justify-content: stretch;
     margin: 20px 0;
 }
 
@@ -54,13 +44,11 @@
     background: #222;
     border: 1px solid;
     border-radius: 7px;
-    width: 90%;
     margin-left: 20px;
 }
 
 .exp-card img{
-    width: 30vh;
-    height: 30vh;
+    width: 40%;
     object-fit: contain;
     margin: 10px 10px;
     border-radius: 7px;
@@ -76,25 +64,30 @@
     padding-bottom: 10px;
 }
 
-@media screen and (max-width: 640px) {
-    .internship-container{
-        grid-template-columns: 1fr;
-    }
-
-    .current-container{
-        grid-template-columns: 1fr;
-    }
-
+@media screen and (max-width: 930px) {
     .exp-card{
-        margin: 10px 0;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+    }
+
+    .exp-card-content{
+        text-align: center;
     }
 
     .exp-card img{
-        width: 20rem;
-        height: 20rem;
-        padding: 10px 10px;
-        margin: 0;
+        width: 50%;
+    }
+
+    .internship-container, .current-container{
+        justify-items: center;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .internship-container, .current-container{
+        grid-template-columns: 1fr;
     }
 }

@@ -22,7 +22,7 @@
     text-align: left;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 840px) {
     .skill-card{
         width: 150px;
         justify-self: center;

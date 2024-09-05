@@ -5,16 +5,19 @@
 }
 
 .profile{
-    margin: 50px;
-    width: 60%;
+    margin: 50px 0;
+    box-sizing: border-box;
+    padding: 0 20px;
     align-self: center;
+    max-width: 960px;
+    width: 100%;
 }
 
 .profile-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: 20px 0;
-    padding: 20px;
+    align-content: stretch;
 }
 
 .contact-card{
@@ -23,7 +26,6 @@
     background: #222;
     border: 1px solid #222;
     border-radius: 7px;
-    width: 300px;
     height: 100px;
     margin: 20px;
 }
@@ -38,4 +40,15 @@
 
 .contact-card h4{
     text-align: center;
+}
+
+@media screen and (max-width: 720px) {
+    .profile-container{
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .contact-card{
+        width: 60%;
+    }
 }

@@ -107,12 +107,14 @@
 }
 
 .skill-container{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 20px 10px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 830px) {
     .about-intro{
         display: flex;
         align-items: center;
@@ -165,16 +167,4 @@
         grid-template-columns: repeat(4, 170px);
     }
 
-}
-
-@media screen and (max-width: 600px) {
-    .skill-container{
-        grid-template-columns: repeat(3, 170px);
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .skill-container{
-        grid-template-columns: repeat(2, 175px);
-    }
 }
